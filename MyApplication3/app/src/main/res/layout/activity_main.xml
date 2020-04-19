@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Добро пожаловать !"
+        android:textColor="@color/mainColor"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@android:style/Widget.TextView.PopupMenu"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ваш номер телефона для регистрации:"
+        android:textAlignment="center"
+        android:textColor="#C6000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <br.com.sapereaude.maskedEditText.MaskedEditText
+        android:id="@+id/phone_input"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginEnd="20dp"
+        android:hint="1234567890"
+        android:inputType="phone"
+        android:textColor="#383535"
+        android:textColorHint="#746F6F"
+        android:textCursorDrawable="@color/mainColor"
+        android:textSize="20sp"
+        android:typeface="monospace"
+        app:allowed_chars="1234567890"
+        app:backgroundTint="@color/mainColor"
+        app:keep_hint="true"
+        app:mask="+7(###)###-##-##" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="В течении 5 минут вам прийдет СМС с кодом активации"
+        android:textAlignment="center"
+        android:textColor="#7C7777" />
+
+    <Button
+        android:id="@+id/send_number_phone"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_register_send"
+        android:enabled="false"
+        android:onClick="SendNumber"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:text="Отправить"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="checkRule"
+            android:text="Согласен с "
+            app:buttonTint="@color/mainColor"
+            android:textColor="#000000"
+            android:textColorHighlight="@color/mainColor"
+            android:textColorHint="#3A3939"
+            android:textCursorDrawable="@color/mainColor" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="readRule"
+            android:text="@string/ruls"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</LinearLayout>
